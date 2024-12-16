@@ -41,7 +41,7 @@ const blogPosts: BlogPost[] = [
 
 const BlogSection = () => {
   return (
-    <section className="p-28">
+    <section className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h4 className="text-orange-400 font-semibold uppercase">Latest Articles</h4>

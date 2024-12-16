@@ -52,7 +52,7 @@ const LatestWork: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 mx-auto  bg-gray-50 p-28 bg-cover bg-center "
+    <section className="py-12 mx-auto  bg-gray-50  bg-cover bg-center "
               style={{ backgroundImage: `url(/ss.pg)` }}>
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Our Latest <span className='text-orange-500'>Work</span></h2>
       <div className="max-w-screen-xl mx-auto px-4">
