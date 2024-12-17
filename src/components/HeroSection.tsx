@@ -1,17 +1,18 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion"; // Framer Motion for animations
 
 const banners = [
   {
     id: 1,
     text: "Welcome to Babulkhirbah. Build your perfect House.",
-    image: "/12.jpg", // replace with actual image paths
+    image: "/12.jpg", // Replace with actual image paths
   },
   {
     id: 2,
     text: "Discover the power of design with Babulkhibrah.",
-    image: "/13.jpg",
+    image: "/13.jpg", // Replace with actual image paths
   },
 ];
 
@@ -60,7 +61,6 @@ export default function HeroSlider() {
     const interval = setInterval(() => {
       nextSlide();
     }, 5000);
-
     return () => clearInterval(interval); // Cleanup
   }, []);
 
@@ -73,46 +73,68 @@ export default function HeroSlider() {
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {banners.map((banner) => (
-            <div
+          {banners.map((banner, index) => (
+            <motion.div
               key={banner.id}
-              className="min-w-full h-[500px] flex items-center justify-center bg-cover bg-center"
-              style={{ backgroundImage: `url(${banner.image})` }}
+              className="min-w-full h-[500px] flex items-center justify-center bg-cover bg-center relative overflow-hidden"
             >
-              <div className="bg-black bg-opacity-50 p-6 rounded-lg w-[370px] text-white text-center mx-auto">
-                <h1 className="text-4xl font-bold mb-4">{banner.text}</h1>
-              </div>
-            </div>
+              {/* Parallax Zoomed Background */}
+              <motion.div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${banner.image})`,
+                }}
+                animate={{
+                  scale: currentSlide === index ? 1.1 : 1, // Zoom effect
+                }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+              />
+
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+
+              {/* Text Content */}
+              <motion.div
+                className="relative z-10 bg-white bg-opacity-10 p-6 rounded-lg text-center text-white mx-auto max-w-md"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <h1 className="text-4xl font-bold">{banner.text}</h1>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
 
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg text-gray-800"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg text-gray-800 z-10"
         >
           &#8592;
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg text-gray-800"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg text-gray-800 z-10"
         >
           &#8594;
         </button>
 
         {/* Dots Navigation */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {banners.map((_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${index === currentSlide ? "bg-white" : "bg-gray-500"}`}
+              className={`w-3 h-3 rounded-full ${
+                index === currentSlide ? "bg-white" : "bg-gray-500"
+              }`}
             ></span>
           ))}
         </div>
       </div>
 
       {/* Cards Section */}
-      <div className="mt-20 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="mt-36 py-12 px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {cards.map((card) => (
           <div
             key={card.id}
@@ -123,10 +145,12 @@ export default function HeroSlider() {
               alt={card.heading}
               width={200}
               height={200}
-              className="w-full h-56 object-cover"
+              className="w-full h-44 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-xl font-bold text-gray-800 mb-2">{card.heading}</h2>
+              <h2 className="text-xl font-bold text-gray-800 mb-2">
+                {card.heading}
+              </h2>
               <h3 className="text-gray-600 text-sm mb-3">{card.subHeading}</h3>
               <p className="text-gray-700 text-sm">{card.paragraph}</p>
             </div>

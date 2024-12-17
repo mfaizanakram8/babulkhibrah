@@ -41,32 +41,57 @@ const blogPosts: BlogPost[] = [
 
 const BlogSection = () => {
   return (
-    <section className="py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h4 className="text-orange-400 font-semibold uppercase">Latest Articles</h4>
-          <h2 className="text-3xl font-bold text-gray-800 mt-2">Recently From the Blog</h2>
+    <section className="py-16 bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section Heading */}
+        <div className="text-center mb-12">
+          <h4 className="text-orange-500 font-semibold uppercase tracking-wide">Latest Articles</h4>
+          <h2 className="text-4xl font-bold text-gray-800 mt-3">
+            Recently From <span className="text-blue-500">Our Blog</span>
+          </h2>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Stay updated with the latest insights, advancements, and trends in the steel manufacturing industry.
+          </p>
         </div>
 
-        {/* Blog Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Blog Posts Grid */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <div key={post.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <div className="relative w-full h-52">
+            <div
+              key={post.id}
+              className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+            >
+              {/* Image Section */}
+              <div className="relative w-full h-60">
                 <Image
                   src={post.imageSrc}
                   alt={post.title}
                   layout="fill"
                   objectFit="cover"
-                  className="hover:scale-105 transition-transform duration-300"
+                  className="hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 hover:opacity-70 transition-opacity"></div>
               </div>
+
+              {/* Content Section */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{post.title}</h3>
+                <h3 className="text-2xl font-semibold text-gray-800 hover:text-blue-500 transition-colors duration-300 mb-3">
+                  {post.title}
+                </h3>
                 <p className="text-sm text-gray-500 mb-4">
                   By {post.author} • {post.date}
                 </p>
-                <p className="text-gray-600">{post.description}</p>
+                <p className="text-gray-600 line-clamp-3">{post.description}</p>
+              </div>
+
+              {/* Read More Button */}
+              <div className="p-6 pt-0">
+                <a
+                  href="#"
+                  className="inline-block px-5 py-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition-colors duration-300"
+                >
+                  Read More
+                </a>
               </div>
             </div>
           ))}
