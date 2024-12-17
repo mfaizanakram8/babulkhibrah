@@ -63,17 +63,17 @@ const LatestWork: React.FC = () => {
   return (
     <section
       className="py-16 bg-cover bg-center relative text-white"
-      style={{ backgroundImage: `url(/ss.jpg)` }}
+      style={{ backgroundImage: `url(/8493.jpg)` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 bg-transparent bg-opacity-50"></div>
       <div className="relative z-10 max-w-screen-xl mx-auto px-6">
         {/* Title */}
-        <h2 className="text-4xl font-extrabold text-center mb-10">
+        <h2 className="text-4xl font-extrabold text-center mb-10 text-black">
           Our Latest <span className="text-orange-500">Work</span>
         </h2>
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {workData.map((work, index) => (
             <Card
               key={index}

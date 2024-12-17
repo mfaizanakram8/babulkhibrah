@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="w-full border-b border-gray-300 bg-gray-50">
       {/* Top Bar: Social Icons on Left, Quick Links on Right */}
-      <div className="w-full bg-gray-100 text-gray-600 text-xs py-2">
+      <div className="w-full bg-gray-100 text-gray-600 text-xs py-2 ">
         <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
           {/* Left Side: Social Media Icons */}
           <div className="flex space-x-4 items-center">
