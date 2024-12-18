@@ -64,7 +64,7 @@ export default function HeroSlider() {
   return (
     <div className="relative w-full overflow-hidden">
       {/* Hero Slider */}
-      <div className="w-full h-[500px] relative">
+      <div className="w-full h-[500px] md:h-screen relative">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -72,7 +72,7 @@ export default function HeroSlider() {
           {banners.map((banner, index) => (
             <motion.div
               key={banner.id}
-              className="min-w-full h-screen flex items-center justify-center bg-cover bg-center relative overflow-hidden"
+              className="min-w-full h-[500px] md:h-screen flex items-center justify-center bg-cover bg-center relative overflow-hidden"
             >
               <motion.div
                 className="absolute inset-0 bg-cover bg-center"
@@ -121,7 +121,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Cards Section */}
-      <div className="mt-48 md:mt-36 py-12 px-6 sm:px-8 md:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-32 py-12 px-6 sm:px-8 md:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((card) => (
           <div
             key={card.id}
