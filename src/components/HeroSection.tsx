@@ -76,7 +76,7 @@ export default function HeroSlider() {
           {banners.map((banner, index) => (
             <motion.div
               key={banner.id}
-              className="min-w-full h-[500px] flex items-center justify-center bg-cover bg-center relative overflow-hidden"
+              className="min-w-full h-screen flex items-center justify-center bg-cover bg-center relative overflow-hidden"
             >
               {/* Parallax Zoomed Background */}
               <motion.div
@@ -121,7 +121,7 @@ export default function HeroSlider() {
         </button>
 
         {/* Dots Navigation */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <div className=" absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {banners.map((_, index) => (
             <span
               key={index}
@@ -134,7 +134,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Cards Section */}
-      <div className="mt-20 py-12 px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="mt-36 py-12 px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {cards.map((card) => (
           <div
             key={card.id}
