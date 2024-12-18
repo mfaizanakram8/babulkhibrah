@@ -46,17 +46,14 @@ const cards = [
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Function to handle the next slide
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % banners.length);
   };
 
-  // Function to handle the previous slide
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length);
   };
 
-  // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -68,7 +65,6 @@ export default function HeroSlider() {
     <div className="relative w-full overflow-hidden">
       {/* Hero Slider */}
       <div className="w-full h-[500px] relative">
-        {/* Slides */}
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -78,7 +74,6 @@ export default function HeroSlider() {
               key={banner.id}
               className="min-w-full h-screen flex items-center justify-center bg-cover bg-center relative overflow-hidden"
             >
-              {/* Parallax Zoomed Background */}
               <motion.div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
@@ -89,11 +84,7 @@ export default function HeroSlider() {
                 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
               />
-
-              {/* Dark Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-
-              {/* Text Content */}
               <motion.div
                 className="relative z-10 bg-white bg-opacity-10 p-6 rounded-lg text-center text-white mx-auto max-w-md"
                 initial={{ opacity: 0, y: 50 }}
@@ -105,8 +96,6 @@ export default function HeroSlider() {
             </motion.div>
           ))}
         </div>
-
-        {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg text-gray-800 z-10"
@@ -119,9 +108,7 @@ export default function HeroSlider() {
         >
           &#8594;
         </button>
-
-        {/* Dots Navigation */}
-        <div className=" absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {banners.map((_, index) => (
             <span
               key={index}
@@ -134,7 +121,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Cards Section */}
-      <div className="mt-48 md:mt-36 py-12 px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="mt-48 md:mt-36 py-12 px-6 sm:px-8 md:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((card) => (
           <div
             key={card.id}
@@ -148,11 +135,15 @@ export default function HeroSlider() {
               className="w-full h-44 object-cover"
             />
             <div className="p-4">
-              <h2 className="text-xl font-bold text-gray-800 mb-2">
+              <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-2">
                 {card.heading}
               </h2>
-              <h3 className="text-gray-600 text-sm mb-3">{card.subHeading}</h3>
-              <p className="text-gray-700 text-sm">{card.paragraph}</p>
+              <h3 className="text-gray-600 text-sm md:text-base mb-3">
+                {card.subHeading}
+              </h3>
+              <p className="text-gray-700 text-sm md:text-base">
+                {card.paragraph}
+              </p>
             </div>
           </div>
         ))}
