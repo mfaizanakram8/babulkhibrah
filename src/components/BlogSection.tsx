@@ -21,7 +21,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    title: 'Sustainable Steel Solutions',
+    title: 'Sustainable  Modern Steel Solutions',
     date: '18 Apr 2024',
     author: 'Steel Insights',
     description:

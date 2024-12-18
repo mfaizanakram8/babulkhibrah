@@ -101,14 +101,14 @@ export default function HeroSlider() {
              title="arrow"
           className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-50 p-3 rounded-full shadow-lg text-gray-800 z-10"
         >
-         <img src="/1.png" alt="arrow" width={20} height={20}/>
+         <Image src="/1.png" alt="arrow" width={20} height={20}/>
         </button>
         <button
         title="arrow"
           onClick={nextSlide}
           className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-50 p-3 rounded-full shadow-lg text-gray-800 z-10"
         >
-         <img src="/2.png" alt="arroq" width={20} height={20} />
+         <Image src="/2.png" alt="arroq" width={20} height={20} />
         </button>
         <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
           {banners.map((_, index) => (
