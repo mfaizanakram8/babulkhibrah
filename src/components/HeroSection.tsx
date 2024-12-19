@@ -123,7 +123,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Cards Section */}
-      <div className="mt-32 py-12 px-6 sm:px-8 md:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+      <div className="mt-32 py-12 px-6 sm:px-8 md:px-20 grid grid-cols-1 sm:grid-cols-2 min-[641px]:grid-cols-3  gap-6">
         {cards.map((card) => (
           <div
             key={card.id}
