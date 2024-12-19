@@ -73,7 +73,7 @@ const LatestWork: React.FC = () => {
           Our Latest <span className="text-orange-500">Work</span>
         </h2>
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 min-[641px]:grid-cols-3 gap-8 justify-items-center">
           {workData.map((work, index) => (
             <Card
               key={index}

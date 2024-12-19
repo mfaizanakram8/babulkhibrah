@@ -55,7 +55,7 @@ const BlogSection = () => {
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 min-[641px]:grid-cols-3 gap-10">
           {blogPosts.map((post) => (
             <div
               key={post.id}
