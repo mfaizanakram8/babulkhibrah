@@ -5,7 +5,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <div className="bg-gray-50 py-8 text-center">
-      <div className='flex flex-row justify-center items-center space-x-32'>
+      <div className='flex flex-row justify-around items-center '>
       {/* Logo */}
       <div className="mb-4 flex flex-col items-center justify-center">
         <Image src="/c.png" alt="logo" width={250} height={250} />
@@ -44,7 +44,7 @@ const Footer = () => {
 
       {/* Social Media Links */}
       <div className="flex justify-center flex-wrap gap-2 ml-44">
-        <Link href="#">
+        <Link href="#" className=' hover:scale-125 transition-[300ms]'>
           <img
             width="25"
             height="25"
@@ -52,7 +52,8 @@ const Footer = () => {
             alt="facebook-new"
           />
         </Link>
-        <Link href="#">
+        <Link href="#" className=' hover:scale-125 transition-[300ms]' >
+      
           <img
             width="25"
             height="25"
@@ -60,7 +61,7 @@ const Footer = () => {
             alt="google-logo"
           />
         </Link>
-        <Link href="#">
+        <Link href="#" className=' hover:scale-125 transition-[300ms]'>
           <img
             width="25"
             height="25"
@@ -68,7 +69,7 @@ const Footer = () => {
             alt="pinterest--v1"
           />
         </Link>
-        <Link href="#">
+        <Link href="#" className=' hover:scale-125 transition-[300ms]'>
           <img
             width="25"
             height="25"
@@ -76,7 +77,7 @@ const Footer = () => {
             alt="twitter"
           />
         </Link>
-        <Link href="#">
+        <Link href="#" className=' hover:scale-125 transition-[300ms]'>
           <img
             width="25"
             height="25"
@@ -88,7 +89,7 @@ const Footer = () => {
       </div>
       </div>
 
-      {/* Copyright */}
+ 
     
     </div>
   );

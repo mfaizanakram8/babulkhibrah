@@ -16,10 +16,10 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
 
           <div className="flex space-x-4 items-center">
-            <Link href="#" className="hover:text-orange-500"><FiFacebook /></Link>
-            <Link href="#" className="hover:text-orange-500"><FiTwitter /></Link>
-            <Link href="#" className="hover:text-orange-500"><FiLinkedin /></Link>
-            <Link href="#" className="hover:text-orange-500"><FiInstagram /></Link>
+            <Link href="#" className="hover:text-orange-500 text-xl"><FiFacebook /></Link>
+            <Link href="#" className="hover:text-orange-500 text-xl"><FiTwitter /></Link>
+            <Link href="#" className="hover:text-orange-500 text-xl"><FiLinkedin /></Link>
+            <Link href="#" className="hover:text-orange-500 text-xl"><FiInstagram /></Link>
           </div>
 
   
